@@ -1,0 +1,10 @@
+.post {
+    border: solid 2px black;
+    padding: 0.5rem 2rem;
+}
+
+.post:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
