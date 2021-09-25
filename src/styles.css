@@ -1,3 +1,6 @@
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
 
 @media(max-width: 1080px) {
     html {
@@ -23,6 +26,20 @@ body {
 }
 
 .blog-input {
+    border: solid 1px black;
     border-radius: 0px;
     outline: none;
+}
+
+.blog-button {
+    border: solid 1px black;
+    border-radius: 0px;
+    outline: none;
+    background-color: unset;
+}
+
+.blog-button:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
 }

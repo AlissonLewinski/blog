@@ -4,11 +4,17 @@
     <h2>Novo post</h2>
 
     <div class="form">
-        <input placeholder="Título" class="blog-input" type="text" id="title">
+        <input [(ngModel)]="title" placeholder="Título" class="blog-input title-input" type="text">
     
         <div class="img-input-container">
             <span>Imagem: </span>
             <input type="file" placeholder="imagem">
         </div>
+
+        <quill-editor (onContentChanged)="onContentChanged($event)"></quill-editor>
+
+        <button class="blog-button">Salvar</button>
     </div>
+
+    <quill-view [content]="content"></quill-view>
 </div>

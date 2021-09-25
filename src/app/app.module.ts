@@ -8,6 +8,8 @@ import { ContentComponent } from './content/content.component';
 import { PostComponent } from './content/posts/post/post.component';
 import { PostsComponent } from './content/posts/posts.component';
 import { CreatePostComponent } from './content/create-post/create-post.component';
+import { QuillModule } from 'ngx-quill';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CreatePostComponent } from './content/create-post/create-post.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    QuillModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePostComponent implements OnInit {
 
+  title: any = ''
+  image: string = ''
+  content: any = ''
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onContentChanged(event: any) {
+    this.content = event.html
+  }
+
+  log() {
+    console.log('sd');
+    console.log(this.content);
+  }
 }
