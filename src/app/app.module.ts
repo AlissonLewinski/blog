@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 import { PostComponent } from './content/posts/post/post.component';
 import { PostsComponent } from './content/posts/posts.component';
-import { CreatePostComponent } from './content/create-post/create-post.component';
+import { CreatePostComponent } from './content/posts/create-post/create-post.component';
 import { QuillModule } from 'ngx-quill';
 import { FormsModule } from '@angular/forms';
 
