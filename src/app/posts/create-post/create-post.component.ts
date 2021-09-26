@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Post } from '../posts.model';
 import { PostsService } from '../posts.service';
 
@@ -15,7 +16,9 @@ export class CreatePostComponent implements OnInit {
     content: ''
   }
 
-  constructor(private postsService: PostsService) { }
+  postSecret: string | null = ''
+
+  constructor(private postsService: PostsService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +39,10 @@ export class CreatePostComponent implements OnInit {
   }
 
   onSave() {
-    this.postsService.create(this.post)
+    this.postSecret = prompt('Qual a senha? 🧐')
+
+    this.postsService.create(this.post, this.postSecret).subscribe(() => {
+      this.router.navigate(['/posts'])
+    })
   }
 }
