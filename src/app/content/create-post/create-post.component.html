@@ -8,13 +8,11 @@
     
         <div class="img-input-container">
             <span>Imagem: </span>
-            <input type="file" placeholder="imagem">
+            <input (change)="handleImageInputChange($event)" type="file" placeholder="imagem">
         </div>
 
         <quill-editor (onContentChanged)="onContentChanged($event)"></quill-editor>
 
         <button class="blog-button">Salvar</button>
     </div>
-
-    <quill-view [content]="content"></quill-view>
 </div>

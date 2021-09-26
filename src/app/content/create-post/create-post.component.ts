@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CreatePostComponent implements OnInit {
 
   title: any = ''
-  image: string = ''
+  image: any = ''
   content: any = ''
 
   constructor() { }
@@ -16,12 +16,18 @@ export class CreatePostComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onContentChanged(event: any) {
-    this.content = event.html
+  handleImageInputChange(event: any) {
+    const image = event.target.files[0]
+    
+    const reader = new FileReader()
+    reader.readAsDataURL(image)
+
+    reader.onload = () => {
+      this.image = reader.result      
+    }
   }
 
-  log() {
-    console.log('sd');
-    console.log(this.content);
+  onContentChanged(event: any) {
+    this.content = event.html
   }
 }
