@@ -4,7 +4,7 @@
     <h2>Novo post</h2>
 
     <div class="form">
-        <input [(ngModel)]="title" placeholder="Título" class="blog-input title-input" type="text">
+        <input [(ngModel)]="post.title" placeholder="Título" class="blog-input title-input" type="text">
     
         <div class="img-input-container">
             <span>Imagem: </span>
@@ -13,6 +13,6 @@
 
         <quill-editor (onContentChanged)="onContentChanged($event)"></quill-editor>
 
-        <button class="blog-button">Salvar</button>
+        <button (click)="onSave()" class="blog-button">Salvar</button>
     </div>
 </div>

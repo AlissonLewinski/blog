@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../posts.model';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-create-post',
@@ -7,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePostComponent implements OnInit {
 
-  title: any = ''
-  image: any = ''
-  content: any = ''
+  post: Post = {
+    title: '',
+    image: '',
+    content: ''
+  }
 
-  constructor() { }
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
   }
@@ -23,11 +27,15 @@ export class CreatePostComponent implements OnInit {
     reader.readAsDataURL(image)
 
     reader.onload = () => {
-      this.image = reader.result      
+      this.post.image = String(reader.result)  
     }
   }
 
   onContentChanged(event: any) {
-    this.content = event.html
+    this.post.content = event.html
+  }
+
+  onSave() {
+    this.postsService.create(this.post)
   }
 }
