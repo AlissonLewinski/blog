@@ -2,11 +2,31 @@
 @import '~quill/dist/quill.bubble.css';
 @import '~quill/dist/quill.snow.css';
 
+@font-face {
+    font-family: "Hermeneus One";
+    src: local("Hermeneus One"), url("assets/fonts/HermeneusOne-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Ropa Sans";
+    src: local("Ropa Sans"), url("assets/fonts/RopaSans-Regular.ttf")
+}
+
+:root {
+    --main-color: #7F5AF0;
+    --background-color: #FFFFFE;
+    --border-width: 3px;
+    --border-radius: 3px;
+    --logo-font: "Hermeneus One";
+    --title-font: "Ropa Sans";
+}
+
 @media(max-width: 1080px) {
     html {
         font-size: 93.75%;
     }
 }
+
 @media(max-width: 720px) {
     html {
         font-size: 87.5%;
@@ -15,31 +35,9 @@
 
 body {
     margin: 0;
+    background-color: var(--main-color);
 }
 
 * {
     box-sizing: border-box;
-}
-
-.content > * {
-    width: 100%;
-}
-
-.blog-input {
-    border: solid 1px black;
-    border-radius: 0px;
-    outline: none;
-}
-
-.blog-button {
-    border: solid 1px black;
-    border-radius: 0px;
-    outline: none;
-    background-color: unset;
-}
-
-.blog-button:hover {
-    cursor: pointer;
-    background-color: black;
-    color: white;
 }

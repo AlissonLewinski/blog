@@ -1,40 +1,13 @@
-.header {
-    height: 100%;
-    border-bottom: solid 2px black;
+:host {
+    grid-area: header;
+    border-bottom: solid var(--border-width) var(--main-color);
+ 
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 60% 40%;
+    grid-template-areas: 
+        'title image'
+        'nav image';
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.title {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-
-    padding-left: 1.5rem;
-}
-
-.title h1 {
-    font-size: 1.5rem;
-    margin: 0 0.5rem 0 0;
-}
-
-.nav {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.nav a {
-    padding: 0.5rem;
-    text-decoration: none;
-    color: black;
-    margin-right: 2rem;
-}
-
-.nav a:hover {
-    background-color: black;
-    color: white;
+    padding: 0 0 1.5rem 0;
 }

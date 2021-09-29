@@ -1,6 +1,37 @@
-.app {
+.app-wrapper {
     height: 100vh;
+    max-width: 1111px;
+
+    margin: 0 auto;
+    padding: 1rem;
+
+    background-color: var(--background-color);
+}
+
+.app-content {
+    height: 100%;
+    width: 100%;
+
+    padding: 0 1.5rem;
+
+    border-left: solid var(--border-width) var(--main-color);
+    border-right: solid var(--border-width) var(--main-color);
+
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 3.5rem 1fr;
+    grid-template-rows: 18rem 1fr;
+    grid-template-areas: 
+        'header'
+        'content';
+}
+
+@media(max-width: 1080px) {
+    .app {
+        width: 80vw;
+    }
+}
+
+@media(max-width: 720px) {
+    html {
+        font-size: 87.5%;
+    }
 }

@@ -1,0 +1,29 @@
+
+:host {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    grid-area: nav;
+}
+
+.nav-items {
+    display: grid;
+    grid-template-rows: 2.5rem 2.5rem;
+    grid-template-columns: 15rem 15em;
+    gap: 1rem;
+}
+
+.nav-items > a {
+    border-radius: var(--border-radius);
+ 
+    font-family: var(--title-font);
+    font-size: 1.8rem;
+    text-decoration: none;
+
+    color: var(--background-color);
+    background-color: var(--main-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

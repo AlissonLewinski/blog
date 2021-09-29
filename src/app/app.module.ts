@@ -11,6 +11,9 @@ import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { QuillModule } from 'ngx-quill';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './header/nav/nav.component';
+import { TitleComponent } from './header/title/title.component';
+import { ImageComponent } from './header/image/image.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
     ContentComponent,
     PostComponent,
     PostsComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    NavComponent,
+    TitleComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
