@@ -18,6 +18,12 @@ export class PostsService {
     )
   }
 
+  getById(id: number): Observable<Post> {
+    return this.http.get<Post>(`${this.baseUrl}/${id}`).pipe(
+      map(obj => obj)
+    )
+  }
+
   create(post: Post, postSecret: string | null): Observable<Post> {
     return this.http.post<Post>(this.baseUrl, {post, postSecret}).pipe(
       map(obj => obj)

@@ -14,6 +14,7 @@ import { ImageComponent } from './header/image/image.component';
 import { PostCreateComponent } from './content/posts/post-create/post-create.component';
 import { PostListComponent } from './content/posts/post-list/post-list.component';
 import { PostItemComponent } from './content/posts/post-list/post-item/post-item.component';
+import { PageTitleComponent } from './page-title/page-title.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PostItemComponent } from './content/posts/post-list/post-item/post-item
     PostCreateComponent,
     NavComponent,
     TitleComponent,
-    ImageComponent
+    ImageComponent,
+    PageTitleComponent
   ],
   imports: [
     BrowserModule,

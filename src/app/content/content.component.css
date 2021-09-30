@@ -1,10 +1,7 @@
-.content {
-    height: 100%;
-    border-bottom: solid 2px black;
+:host {
+    grid-area: content;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 2rem;
+    display: grid;
+    grid-template-rows: 0 1fr;
+    grid-template-columns: 1fr;
 }

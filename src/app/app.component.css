@@ -1,5 +1,5 @@
 .app-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     max-width: 1111px;
 
     margin: 0 auto;
@@ -8,19 +8,20 @@
     background-color: var(--background-color);
 }
 
-.app-content {
-    height: 100%;
+.app {
+    min-height: calc(100vh - 2rem); /* "smart" or horrible?  🧐*/
     width: 100%;
 
-    padding: 0 1.5rem;
+    padding: 1rem;
 
     border-left: solid var(--border-width) var(--main-color);
     border-right: solid var(--border-width) var(--main-color);
 
     display: grid;
-    grid-template-rows: 18rem 1fr;
+    grid-template-rows: 18rem 5rem 1fr;
     grid-template-areas: 
         'header'
+        'page-title'
         'content';
 }
 
