@@ -1,4 +1,7 @@
 :host {
-    display: grid;
-    
+    padding: 0.2rem 1rem 0 1rem;
+
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }

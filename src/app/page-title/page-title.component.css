@@ -9,6 +9,7 @@
 
 h2 {
     color: var(--main-color);
-    font-family: var(--title-font);
+    font-family: var(--logo-font);
+    font-weight: lighter;
     font-size: 3rem;
 }

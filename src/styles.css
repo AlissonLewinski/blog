@@ -12,6 +12,11 @@
     src: local("Ropa Sans"), url("assets/fonts/RopaSans-Regular.ttf")
 }
 
+@font-face {
+    font-family: "Neuton";
+    src: local("Neuton"), url("assets/fonts/Neuton-Regular.ttf")
+}
+
 :root {
     --main-color: #7F5AF0;
     --background-color: #FFFFFE;
@@ -19,6 +24,7 @@
     --border-radius: 3px;
     --logo-font: "Hermeneus One";
     --title-font: "Ropa Sans";
+    --text-font: "Neuton";
 }
 
 @media(max-width: 1080px) {
