@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Post, PostListParams } from '../content/posts/post.model';
+import { Post, PostListParams } from '../models/post.model';
 import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
 
