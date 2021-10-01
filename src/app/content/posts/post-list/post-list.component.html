@@ -7,7 +7,7 @@
     </button>
 
     <select class="categories blog-button" name="" id="">
-        <option value="">Filtrar por categoria...</option>
+        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
     </select>
 
     <div class="name-search">

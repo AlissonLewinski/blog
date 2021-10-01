@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/models/category.model';
+import { CategoriesService } from 'src/app/services/categories.service';
 import { Post, PostListParams } from '../../../models/post.model';
 import { PostsService } from '../../../services/posts.service';
 
@@ -10,6 +12,7 @@ import { PostsService } from '../../../services/posts.service';
 export class PostListComponent implements OnInit {
 
   posts: Post[] = []
+  categories: Category[] = []
 
   params: PostListParams = {
     page: 1,
@@ -18,7 +21,7 @@ export class PostListComponent implements OnInit {
     titleSearch: ''
   }
 
-  constructor(private postsService: PostsService) { }
+  constructor(private postsService: PostsService, private categoriesService: CategoriesService) { }
 
   fetchPosts(): void {
     this.postsService.getAll(this.params).subscribe((res: any) => {
@@ -26,8 +29,15 @@ export class PostListComponent implements OnInit {
     })
   }
 
+  fetchCategories(): void {
+    this.categoriesService.getAll().subscribe((res: any) => {
+      this.categories = res.categories
+    })
+  }
+
   ngOnInit(): void {
     this.fetchPosts()
+    this.fetchCategories()
   }
 
   toggleDirection(): void {
