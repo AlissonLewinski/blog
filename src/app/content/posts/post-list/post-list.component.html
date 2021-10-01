@@ -1,1 +1,21 @@
-<app-post-item *ngFor="let post of posts" [post]="post"></app-post-item>
+<div class="filters">
+    <button (click)="toggleSorting()" class="order blog-button">
+        Data 
+        <span class="material-icons">
+            {{ascendingSorting ? 'arrow_upward' : 'arrow_downward'}}
+        </span>
+    </button>
+
+    <select class="categories blog-button" name="" id="">
+        <option value="">Filtrar por categoria...</option>
+    </select>
+
+    <div class="name-search">
+        <input class="blog-input" type="text">
+        <button class="blog-button material-icons">arrow_forward</button>
+    </div>
+</div>
+
+<div class="posts">
+    <app-post-item *ngFor="let post of posts" [post]="post"></app-post-item>
+</div>

@@ -11,12 +11,18 @@ export class PostListComponent implements OnInit {
 
   posts: Post[] = []
 
+  ascendingSorting: boolean = false
+
   constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
     this.postsService.getAll().subscribe((res: any) => {
       this.posts = res.posts
     })
+  }
+
+  toggleSorting(): void {
+    this.ascendingSorting = !this.ascendingSorting
   }
 
 }

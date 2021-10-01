@@ -2,6 +2,8 @@
 @import '~quill/dist/quill.bubble.css';
 @import '~quill/dist/quill.snow.css';
 
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 @font-face {
     font-family: "Hermeneus One";
     src: local("Hermeneus One"), url("assets/fonts/HermeneusOne-Regular.ttf")
@@ -46,4 +48,33 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+.blog-input {
+    height: 2rem;
+
+    border: solid var(--border-width) var(--main-color);
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+.blog-input:focus {
+    border-style: dashed;
+}
+
+.blog-button {
+    font-size: 1.2rem;
+
+    height: 2rem;
+
+    color: var(--background-color);
+    background-color: var(--main-color);
+    border: unset;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+.blog-small-button:active {
+    color: var(--main-color);
+    background-color: var(--background-color);
 }
