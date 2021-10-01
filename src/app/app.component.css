@@ -18,7 +18,7 @@
     border-right: solid var(--border-width) var(--main-color);
 
     display: grid;
-    grid-template-rows: 18rem 5rem 1fr;
+    grid-template-rows: 16rem 5rem 1fr;
     grid-template-areas: 
         'header'
         'page-title'

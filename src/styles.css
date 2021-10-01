@@ -63,6 +63,7 @@ body {
 }
 
 .blog-button {
+    cursor: pointer;
     font-size: 1.2rem;
 
     height: 2rem;
@@ -74,7 +75,7 @@ body {
     outline: none;
 }
 
-.blog-small-button:active {
+.blog-button:active {
     color: var(--main-color);
     background-color: var(--background-color);
 }

@@ -1,8 +1,8 @@
 <div class="filters">
-    <button (click)="toggleSorting()" class="order blog-button">
+    <button (click)="toggleDirection()" class="order blog-button">
         Data 
         <span class="material-icons">
-            {{ascendingSorting ? 'arrow_upward' : 'arrow_downward'}}
+            {{params.direction === 'desc' ? 'arrow_downward' : 'arrow_upward'}}
         </span>
     </button>
 
@@ -11,8 +11,8 @@
     </select>
 
     <div class="name-search">
-        <input class="blog-input" type="text">
-        <button class="blog-button material-icons">arrow_forward</button>
+        <input (keydown.enter)="fetchPosts()" [(ngModel)]="params.titleSearch" class="blog-input" type="text">
+        <button (click)="fetchPosts()" class="blog-button material-icons">arrow_forward</button>
     </div>
 </div>
 

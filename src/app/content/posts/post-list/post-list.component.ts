@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../post.model';
+import { Post, PostListParams } from '../post.model';
 import { PostsService } from '../posts.service';
 
 @Component({
@@ -11,18 +11,28 @@ export class PostListComponent implements OnInit {
 
   posts: Post[] = []
 
-  ascendingSorting: boolean = false
+  params: PostListParams = {
+    page: 1,
+    limit: 8,
+    direction: 'desc',
+    titleSearch: ''
+  }
 
   constructor(private postsService: PostsService) { }
 
-  ngOnInit(): void {
-    this.postsService.getAll().subscribe((res: any) => {
+  fetchPosts(): void {
+    this.postsService.getAll(this.params).subscribe((res: any) => {
       this.posts = res.posts
     })
   }
 
-  toggleSorting(): void {
-    this.ascendingSorting = !this.ascendingSorting
+  ngOnInit(): void {
+    this.fetchPosts()
+  }
+
+  toggleDirection(): void {
+    this.params.direction = this.params.direction === 'desc' ? 'asc' : 'desc'
+    this.fetchPosts()
   }
 
 }

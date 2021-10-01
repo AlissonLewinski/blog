@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Post } from './post.model';
+import { Post, PostListParams } from './post.model';
 import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
 
@@ -12,8 +12,10 @@ export class PostsService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.baseUrl).pipe(
+  getAll(params: PostListParams): Observable<Post[]> {
+    const queryParams = new URLSearchParams(params as any).toString();
+    
+    return this.http.get<Post[]>(`${this.baseUrl}?${queryParams}`).pipe(
       map(obj => obj)
     )
   }

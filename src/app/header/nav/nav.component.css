@@ -8,8 +8,8 @@
 
 .nav-items {
     display: grid;
-    grid-template-rows: 2.5rem 2.5rem;
-    grid-template-columns: 15rem 15em;
+    grid-template-rows: 2.45rem 2.45rem;
+    grid-template-columns: 14rem 14rem;
     gap: 1rem;
 }
 
