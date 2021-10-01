@@ -6,7 +6,8 @@
         </span>
     </button>
 
-    <select class="categories blog-button" name="" id="">
+    <select (change)="fetchPosts()" [(ngModel)]="params.category_id" class="categories blog-button">
+        <option [value]="null">Categorias...</option>
         <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
     </select>
 

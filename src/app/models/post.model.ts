@@ -10,5 +10,6 @@ export interface PostListParams {
     page: number,
     limit: number,
     titleSearch: string,
-    direction: string
+    direction: string,
+    category_id: number | null
 }

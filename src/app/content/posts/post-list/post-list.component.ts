@@ -18,7 +18,8 @@ export class PostListComponent implements OnInit {
     page: 1,
     limit: 8,
     direction: 'desc',
-    titleSearch: ''
+    titleSearch: '',
+    category_id: null
   }
 
   constructor(private postsService: PostsService, private categoriesService: CategoriesService) { }
