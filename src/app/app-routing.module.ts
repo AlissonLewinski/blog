@@ -5,6 +5,10 @@ import { PostListComponent } from './content/posts/post-list/post-list.component
 
 const routes: Routes = [
   {
+    path: '',
+    component: PostListComponent
+  },
+  {
     path: 'posts',
     component: PostListComponent
   },
