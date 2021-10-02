@@ -79,3 +79,7 @@ body {
     color: var(--main-color);
     background-color: var(--background-color);
 }
+
+.half-opacity {
+    opacity: 0.5;
+}
