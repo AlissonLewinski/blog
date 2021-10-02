@@ -16,10 +16,10 @@
 }
 
 :root {
-    --main-color: #7F5AF0;
+    --main-color: #7b01cc;
     --background-color: #FFFFFE;
     --border-width: 3px;
-    --border-radius: 3px;
+    --border-radius: 2px;
     --logo-font: "Hermeneus One";
     --title-font: "Ropa Sans";
     --text-font: "Neuton";
@@ -39,7 +39,9 @@
 
 body {
     margin: 0;
-    background-color: var(--main-color);
+    background-image: url(assets/images/wpp.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 * {

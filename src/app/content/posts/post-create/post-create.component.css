@@ -4,6 +4,7 @@
     grid-template-rows: 2rem 1fr 2rem;
     grid-template-areas: 
         'title image'
+        'description description'
         'content content'
         'save save';
     gap: 2rem;
