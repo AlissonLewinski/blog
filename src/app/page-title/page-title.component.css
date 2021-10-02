@@ -3,6 +3,7 @@
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     padding-left: 1rem;
 }
@@ -13,3 +14,19 @@ h2 {
     font-weight: lighter;
     font-size: 3rem;
 }
+
+/* ref: https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+.loader {
+    width: 120px;
+    height: 20px;
+    background: 
+    linear-gradient(var(--main-color) 0 0) left -40px top 0/40px 20px,
+    linear-gradient(#ddd 0 0) center/100% 50%; 
+    background-repeat: no-repeat;
+    animation: loader 1s infinite linear;
+}
+
+@keyframes loader {
+100% {background-position: right -40px top 0,center}
+}
+  

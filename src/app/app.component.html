@@ -4,6 +4,7 @@
   <div class="app">
     <app-header></app-header>
     <app-page-title></app-page-title>
+    <app-loader [hidden]="isLoading | async | inverse"></app-loader>
     <app-content></app-content>
   </div>
 </div>
