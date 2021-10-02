@@ -1,8 +1,4 @@
-.create-post > p {
-    margin: 0;
-}
-
-.form {
+:host {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2rem 1fr 2rem;
@@ -31,10 +27,8 @@
     margin: 0 1rem 0 2px;
 }
 
-quill-editor {
+ckeditor {
     grid-area: content;
-    min-height: 40vh;
-    padding-bottom: 5rem;
 }
 
 .form button {

@@ -1,18 +1,12 @@
-<div class="create-post">
-    <p>não use se não for o dono do blog hein 🧐</p>
-    
-    <h2>Novo post</h2>
+<p>não use se não for o dono do blog hein 🧐</p>
 
-    <div class="form">
-        <input [(ngModel)]="post.title" placeholder="Título" class="blog-input title-input" type="text">
-    
-        <div class="img-input-container">
-            <span>Imagem: </span>
-            <input (change)="handleImageInputChange($event)" type="file" placeholder="imagem">
-        </div>
+<input [(ngModel)]="post.title" placeholder="Título" class="blog-input title-input" type="text">
 
-        <quill-editor (onContentChanged)="onContentChanged($event)"></quill-editor>
-
-        <button (click)="onSave()" class="blog-button">Salvar</button>
-    </div>
+<div class="img-input-container">
+    <span>Imagem: </span>
+    <input (change)="handleImageInputChange($event)" type="file" placeholder="imagem">
 </div>
+
+<ckeditor [(ngModel)]="post.content" data="hey!"></ckeditor>
+
+<button (click)="onSave()" class="blog-button">Salvar</button>

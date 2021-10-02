@@ -18,6 +18,7 @@ import { PageTitleComponent } from './page-title/page-title.component';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { LoaderComponent } from './loader/loader.component';
 import { InversePipe } from './pipes/inverse.pipe';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { InversePipe } from './pipes/inverse.pipe';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    QuillModule.forRoot()
+    CKEditorModule
   ],
   providers: [
     {
