@@ -14,8 +14,8 @@
     --row-number: 2;
     --column-number: 2;
 
-    --row-size: calc((var(--height) - var(--gap)) / var(--row-number));
-    --column-size: calc((var(--width) - var(--gap)) / var(--column-number));
+    --row-size: calc((var(--height) - calc(var(--gap) / 2 * var(--row-number))) / var(--row-number));
+    --column-size: calc((var(--width) - calc(var(--gap) / 2 * var(--column-number))) / var(--column-number));
 
     min-width: var(--width);
     min-height: var(--height);
