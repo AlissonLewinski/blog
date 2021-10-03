@@ -1,12 +1,15 @@
-<p>não use se não for o dono do blog hein 🧐</p>
 
-<input [(ngModel)]="post.title" placeholder="Título" class="blog-input title-input" type="text">
+<input [(ngModel)]="post.title" placeholder="Título" type="text" class="blog-input title">
 
-<div class="img-input-container">
-    <span>Imagem: </span>
-    <input (change)="handleImageInputChange($event)" type="file" placeholder="imagem">
-</div>
+<button (click)="imageInput.click()" class="blog-button image">
+    {{!uploadedImage ? 
+        'Selecionar imagem...' :
+        'Imagem selecionada: ' + uploadedImage.name}}
+</button>
+<input #imageInput (change)="handleImageInput($event)" type="file" accept="image/*" [hidden]="true">
 
-<ckeditor [(ngModel)]="post.content" data="hey!"></ckeditor>
+<input [(ngModel)]="post.description" placeholder="Descrição" type="text" class="blog-input description">
 
-<button (click)="onSave()" class="blog-button">Salvar</button>
+<ckeditor [(ngModel)]="post.content" class="content"></ckeditor>
+
+<button (click)="onSave()" class="blog-button save">Salvar</button>

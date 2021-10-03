@@ -13,6 +13,9 @@ export class PostListComponent implements OnInit {
 
   posts: Post[] = []
   categories: Category[] = []
+  
+  totalPostCount: number = 1
+  pageCount: number = 1
 
   params: PostListParams = {
     page: 1,
@@ -27,6 +30,8 @@ export class PostListComponent implements OnInit {
   fetchPosts(): void {
     this.postsService.getAll(this.params).subscribe((res: any) => {
       this.posts = res.posts
+      this.totalPostCount = res.total
+      this.pageCount = Math.ceil(res.total / this.params.limit)
     })
   }
 
@@ -46,4 +51,13 @@ export class PostListComponent implements OnInit {
     this.fetchPosts()
   }
 
+  addToPage(amount: number): void {
+    this.params.page += amount
+    this.fetchPosts()
+  }
+
+  changePage(page: number): void {
+    this.params.page = page
+    this.fetchPosts()
+  }
 }

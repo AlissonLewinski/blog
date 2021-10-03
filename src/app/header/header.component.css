@@ -1,6 +1,6 @@
 :host {
     grid-area: header;
-    border-bottom: solid var(--border-width) var(--main-color);
+    border-bottom: solid var(--border-width) var(--color-main);
  
     display: grid;
     grid-template-rows: 50% 50%;
@@ -9,5 +9,5 @@
         'title image'
         'nav image';
 
-    padding: 0 0 1.5rem 0;
+    padding: 0 0 1rem 0;
 }

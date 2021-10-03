@@ -1,5 +1,7 @@
-<div class="post">
-    <div class="image" [style.background-image]="'url(' + post.image + ')'" alt=""></div>
-    <h4 class="title">{{post.title}}</h4>
-    <p class="created_at">{{post.created_at | date}}</p>
-</div>
+<h4 class="title">{{post.title}}</h4>
+
+<div class="image" [style.background-image]="'url(' + post.image + ')'"></div>
+
+<p class="description">{{post.description}}</p>
+
+<span class="date">{{post.created_at | date: 'HH:mm - dd/MM/yyyy'}}</span>

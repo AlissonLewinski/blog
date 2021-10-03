@@ -1,53 +1,76 @@
-.post {
-    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.25);
+:host {
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.075s ease-in-out;
 
+    height: var(--post-item-height);
     padding: 0.5rem;
 
     display: grid;
-    grid-template-columns: 7rem 1fr;
-    grid-template-rows: 2rem 1fr;
+    grid-template-rows: 20% 1fr 15%;
+    grid-template-columns: 30% 1fr;
     grid-template-areas: 
-        'image title'
-        'image created_at';
-
-    font-family: var(--text-font);
-    color: var(--main-color);
+        'title title'
+        'image description'
+        'image date';
+    gap: 0.25rem;
 }
 
-.post:hover {
+:host:hover {
     cursor: pointer;
-    box-shadow: 0px 5px 6px var(--main-color);
+    box-shadow: 0px 3px 4px rgba(123, 1, 204, 1);
 }
 
 .title {
-    font-size: 2rem;
-    font-weight: normal;
-    
     grid-area: title;
-    text-align: center;
-    
+
     margin: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    color: var(--color-main);
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    font-weight: lighter;
+
+    border-bottom: solid var(--border-width) var(--color-main);
 }
 
-.created_at {
-    grid-area: created_at;
+.image {
+    grid-area: image;
+
+    border-radius: var(--border-radius);
+
+    background-position: center;
+    background-size: cover;
+}
+
+.description {
+    grid-area: description;
+    margin: 0;
+
+    color: var(--color-text);
+    font-family: var(--font-title);
+    font-size: 1rem;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.date {
+    grid-area: date;
 
     margin: 0;
 
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-}
 
-.image {
-    grid-area: image;
-
-    height: 7rem;
-    width: 7rem;
-    background-size: cover;
-    background-position: center;
+    color: var(--color-main);
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: lighter;
 }

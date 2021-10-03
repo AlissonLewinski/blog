@@ -5,16 +5,25 @@ import { PostListComponent } from './content/posts/post-list/post-list.component
 
 const routes: Routes = [
   {
-    path: '',
-    component: PostListComponent
-  },
-  {
     path: 'posts',
-    component: PostListComponent
+    component: PostListComponent,
+    data: {
+      name: 'Postagens'
+    }
   },
   {
     path: 'new',
-    component: PostCreateComponent
+    component: PostCreateComponent,
+    data: {
+      name: 'Nova Postagem'
+    }
+  },
+  {
+    path: '**',
+    component: PostListComponent,
+    data: {
+      name: 'Postagens'
+    }
   }
 ];
 

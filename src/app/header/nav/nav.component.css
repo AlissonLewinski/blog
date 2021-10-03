@@ -16,12 +16,12 @@
 .nav-items > a {
     border-radius: var(--border-radius);
  
-    font-family: var(--title-font);
+    font-family: var(--font-title);
     font-size: 1.8rem;
     text-decoration: none;
 
-    color: var(--background-color);
-    background-color: var(--main-color);
+    color: var(--color-background);
+    background-color: var(--color-main);
 
     display: flex;
     align-items: center;

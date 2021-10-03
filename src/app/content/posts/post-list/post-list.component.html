@@ -20,3 +20,22 @@
 <div class="posts">
     <app-post-item *ngFor="let post of posts" [post]="post"></app-post-item>
 </div>
+
+<div class="paginator">
+    <button (click)="addToPage(-1)" [disabled]="params.page <= 1" class="page-next blog-button material-icons">
+        arrow_back
+    </button>
+    <button 
+        *ngFor="let el of [].constructor(pageCount); let i = index"
+        (click)="changePage(i + 1)"
+        [class.page-selected]="params.page === i + 1"
+        [class.page-unselected]="params.page !== i + 1"
+        [disabled]="params.page === i + 1"
+        class="blog-button page"
+    >
+        {{i + 1}}
+    </button>
+    <button (click)="addToPage(1)" [disabled]="params.page >= pageCount" class="page-next blog-button material-icons">
+        arrow_forward
+    </button>
+</div>

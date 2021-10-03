@@ -13,29 +13,27 @@ export class PostCreateComponent implements OnInit {
   post: Post = {
     title: '',
     image: '',
+    description: '',
     content: ''
   }
 
   postSecret: string | null = ''
+
+  uploadedImage: any = null
+  reader: FileReader = new FileReader()
 
   constructor(private postsService: PostsService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  handleImageInputChange(event: any) {
-    const image = event.target.files[0]
+  handleImageInput(event: any) {
+    this.uploadedImage = event.target.files[0]
     
-    const reader = new FileReader()
-    reader.readAsDataURL(image)
-
-    reader.onload = () => {
-      this.post.image = String(reader.result)  
+    this.reader.readAsDataURL(this.uploadedImage)
+    this.reader.onload = () => {
+      this.post.image = String(this.reader.result)  
     }
-  }
-
-  onContentChanged(event: any) {
-    this.post.content = event.html
   }
 
   onSave() {

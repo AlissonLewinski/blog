@@ -9,7 +9,12 @@ import { Post } from '../../../../models/post.model';
 export class PostItemComponent implements OnInit {
 
   @Input('post')
-  post: Post = {title: '', image: '', content: ''}
+  post: Post = {
+    title: '',
+    image: '',
+    description: '',
+    content: ''
+  }
 
   constructor() { }
 

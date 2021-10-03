@@ -10,10 +10,10 @@ h1 {
     padding: 0 1rem 0.5rem 1rem;
     margin: 0;
 
-    border-bottom: solid var(--border-width) var(--main-color);
+    border-bottom: solid var(--border-width) var(--color-main);
 
-    color: var(--main-color);
-    font-family: var(--logo-font);
+    color: var(--color-main);
+    font-family: var(--font-logo);
     font-size: 4.5rem;
     font-weight: lighter;
 }

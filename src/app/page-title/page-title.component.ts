@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Data, Router, RoutesRecognized } from '@angular/router';
 import { LoaderService } from '../services/loader.service';
 
 @Component({
@@ -9,8 +10,18 @@ import { LoaderService } from '../services/loader.service';
 export class PageTitleComponent implements OnInit {
 
   isLoading = LoaderService.isLoading
+  routeName: string | null = null
 
-  constructor() { }
+  constructor(private router: Router) {
+
+    router.events.subscribe(event => {
+      if (event instanceof RoutesRecognized) {
+        let route = event.state.root.firstChild
+        this.routeName = route?.data?.name
+      }
+
+    });
+  }
 
   ngOnInit(): void {
   }
