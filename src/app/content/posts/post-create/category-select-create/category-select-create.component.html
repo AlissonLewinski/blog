@@ -1,0 +1,21 @@
+
+<ng-template [ngIf]="!creatingCategory">
+
+    <select (change)="onCategorySelected()" [(ngModel)]="selectedId" class="blog-button select">
+        <option [value]="null">Categorias...</option>
+        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+    </select>
+    
+    <button (click)="creatingCategory = true" class="blog-button material-icons">add</button>
+
+</ng-template>
+
+<ng-template [ngIf]="creatingCategory">
+
+    <button (click)="creatingCategory = false" class="blog-button material-icons">clear</button>
+
+    <input [(ngModel)]="categoryBeingCreated.name" placeholder="Nome da categoria..." type="text" class="blog-input new-name">
+
+    <button (click)="onSave()" class="blog-button material-icons">done</button>
+
+</ng-template>

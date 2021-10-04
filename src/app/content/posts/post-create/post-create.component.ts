@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/models/category.model';
+import { CategoriesService } from 'src/app/services/categories.service';
 import { Post } from '../../../models/post.model';
 import { PostsService } from '../../../services/posts.service';
 
@@ -14,15 +16,20 @@ export class PostCreateComponent implements OnInit {
     title: '',
     image: '',
     description: '',
+    category_id: null,
     content: ''
   }
+
+  isCreatingCategory: boolean = false
 
   postSecret: string | null = ''
 
   uploadedImage: any = null
   reader: FileReader = new FileReader()
 
-  constructor(private postsService: PostsService, private router: Router) { }
+  constructor(private postsService: PostsService, private router: Router) {
+
+  }
 
   ngOnInit(): void {
   }

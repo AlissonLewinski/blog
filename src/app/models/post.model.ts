@@ -3,6 +3,7 @@ export interface Post {
     title: string,
     image: string,
     description: string,
+    category_id: number | null,
     content: string,
     created_at?: Date
 }

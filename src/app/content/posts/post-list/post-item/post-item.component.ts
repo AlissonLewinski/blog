@@ -13,6 +13,7 @@ export class PostItemComponent implements OnInit {
     title: '',
     image: '',
     description: '',
+    category_id: null,
     content: ''
   }
 

@@ -1,12 +1,12 @@
 :host {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 30% 28%;
     grid-template-rows: 2rem 2rem 1fr 2rem;
     grid-template-areas: 
-        'title image'
-        'description description'
-        'content content'
-        'save save';
+        'title       image       image'
+        'description description category'
+        'content     content     content'
+        'save        save        save';
     gap: 1rem;
 }
 
@@ -21,6 +21,10 @@
 
 .description {
     grid-area: description;
+}
+
+app-category-select-create {
+    grid-area: category;
 }
 
 .content {
