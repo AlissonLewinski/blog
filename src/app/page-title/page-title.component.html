@@ -1,3 +1,3 @@
-<h2>{{routeName}}</h2>
+<h2>{{routeName | async}}</h2>
 
 <app-loader [hidden]="isLoading | async | inverse"></app-loader>

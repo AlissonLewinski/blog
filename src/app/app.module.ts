@@ -19,6 +19,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { InversePipe } from './pipes/inverse.pipe';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { CategorySelectCreateComponent } from './content/post-create/category-select-create/category-select-create.component';
+import { PostPageComponent } from './content/post-page/post-page.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CategorySelectCreateComponent } from './content/post-create/category-se
     PageTitleComponent,
     LoaderComponent,
     InversePipe,
-    CategorySelectCreateComponent
+    CategorySelectCreateComponent,
+    PostPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category.model';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { Post, PostListParams } from '../../models/post.model';
@@ -27,6 +28,11 @@ export class PostListComponent implements OnInit {
 
   constructor(private postsService: PostsService, private categoriesService: CategoriesService) { }
 
+  ngOnInit(): void {
+    this.fetchPosts()
+    this.fetchCategories()
+  }
+
   fetchPosts(): void {
     this.postsService.getAll(this.params).subscribe((res: any) => {
       this.posts = res.posts
@@ -39,11 +45,6 @@ export class PostListComponent implements OnInit {
     this.categoriesService.getAll().subscribe((res: any) => {
       this.categories = res.categories
     })
-  }
-
-  ngOnInit(): void {
-    this.fetchPosts()
-    this.fetchCategories()
   }
 
   toggleDirection(): void {
