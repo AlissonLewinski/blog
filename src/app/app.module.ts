@@ -10,15 +10,15 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavComponent } from './header/nav/nav.component';
 import { TitleComponent } from './header/title/title.component';
 import { ImageComponent } from './header/image/image.component';
-import { PostCreateComponent } from './content/posts/post-create/post-create.component';
-import { PostListComponent } from './content/posts/post-list/post-list.component';
-import { PostItemComponent } from './content/posts/post-list/post-item/post-item.component';
+import { PostCreateComponent } from './content/post-create/post-create.component';
+import { PostListComponent } from './content/post-list/post-list.component';
+import { PostItemComponent } from './content/post-list/post-item/post-item.component';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { LoaderComponent } from './loader/loader.component';
 import { InversePipe } from './pipes/inverse.pipe';
 import { CKEditorModule } from 'ckeditor4-angular';
-import { CategorySelectCreateComponent } from './content/posts/post-create/category-select-create/category-select-create.component';
+import { CategorySelectCreateComponent } from './content/post-create/category-select-create/category-select-create.component';
 
 @NgModule({
   declarations: [

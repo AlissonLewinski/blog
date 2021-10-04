@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category.model';
 import { CategoriesService } from 'src/app/services/categories.service';
-import { Post } from '../../../models/post.model';
-import { PostsService } from '../../../services/posts.service';
+import { Post } from '../../models/post.model';
+import { PostsService } from '../../services/posts.service';
 
 @Component({
   selector: 'app-post-create',
