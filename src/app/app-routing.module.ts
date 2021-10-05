@@ -32,11 +32,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: PostListComponent,
-    data: {
-      name: 'Postagens'
-    },
-    canActivate: [PageTitleGuard]
+    redirectTo: 'posts'
   }
 ];
 
