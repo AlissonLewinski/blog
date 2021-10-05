@@ -26,7 +26,7 @@ export class PostsService {
     )
   }
 
-  create(post: Post, postSecret: string | null): Observable<Post> {
+  create(post: Post, postSecret: string): Observable<Post> {
     return this.http.post<Post>(this.baseUrl, {post, postSecret}).pipe(
       map(obj => obj)
     )

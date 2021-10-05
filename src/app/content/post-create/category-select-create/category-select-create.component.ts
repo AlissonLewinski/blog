@@ -39,7 +39,7 @@ export class CategorySelectCreateComponent implements OnInit {
   }
 
   onSave(): void {
-    const postSecret = prompt('Qual a senha? 🧐')
+    const postSecret = prompt('Qual a senha? 🧐') || ''
 
     this.categoriesService.create(this.categoryBeingCreated, postSecret).subscribe(() => {
       this.fetchCategories()

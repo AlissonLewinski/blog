@@ -18,7 +18,7 @@ export class CategoriesService {
     )
   }
 
-  create(category: Category, postSecret: string | null): Observable<Category> {
+  create(category: Category, postSecret: string): Observable<Category> {
     return this.http.post<Category>(this.baseUrl, {category, postSecret}).pipe(
       map(obj => obj)
     )

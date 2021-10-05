@@ -8,8 +8,8 @@
 
 .nav-items {
     --width: 28rem;
-    --height: 6rem;
-    --gap: 1rem;
+    --height: 5.5rem;
+    --gap: 0.5rem;
     
     --row-number: 2;
     --column-number: 2;
@@ -23,8 +23,8 @@
     display: grid;
     grid-template-rows: repeat(var(--row-number), var(--row-size));
     grid-template-columns: repeat(var(--column-number), var(--column-size));
-    align-content: space-around;
-    justify-content: space-around;
+    align-content: space-between;
+    justify-content: space-between;
 }
 
 .nav-items > a {

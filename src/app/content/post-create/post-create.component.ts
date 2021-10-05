@@ -22,7 +22,7 @@ export class PostCreateComponent implements OnInit {
 
   isCreatingCategory: boolean = false
 
-  postSecret: string | null = ''
+  postSecret: string = ''
 
   uploadedImage: any = null
   reader: FileReader = new FileReader()
@@ -44,7 +44,7 @@ export class PostCreateComponent implements OnInit {
   }
 
   onSave() {
-    this.postSecret = prompt('Qual a senha? 🧐')
+    this.postSecret = prompt('Qual a senha? 🧐') || ''
 
     this.postsService.create(this.post, this.postSecret).subscribe(() => {
       this.router.navigate(['/posts'])

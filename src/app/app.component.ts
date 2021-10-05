@@ -9,8 +9,8 @@ import { LoaderService } from './services/loader.service';
 export class AppComponent {
   title = 'blog';
   
-  isLoading = LoaderService.isLoading
+  isLoading = this.loaderService.isLoading
 
-  constructor() { }
+  constructor(private loaderService: LoaderService) { }
 
 }

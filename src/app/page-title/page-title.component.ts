@@ -9,10 +9,10 @@ import { PageTitleService } from '../services/page-title.service';
 })
 export class PageTitleComponent implements OnInit {
 
-  isLoading = LoaderService.isLoading
+  isLoading = this.loaderService.isLoading
   routeName = PageTitleService.title
 
-  constructor() {
+  constructor(private loaderService: LoaderService) {
     
   }
 

@@ -15,10 +15,10 @@ export class LoaderInterceptor implements HttpInterceptor {
   constructor(private loaderService: LoaderService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    LoaderService.isLoading.next(true)
-
+    this.loaderService.isLoading.next(true)
+    
     return next.handle(req).pipe(
-      finalize(() => LoaderService.isLoading.next(false))
+      finalize(() => this.loaderService.isLoading.next(false))
     )
   }
   

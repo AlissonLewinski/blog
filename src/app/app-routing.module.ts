@@ -24,7 +24,11 @@ const routes: Routes = [
   },
   {
     path: 'posts/:id',
-    component: PostPageComponent
+    component: PostPageComponent,
+    data: {
+      name: 'Postagem' // Will be overwritten by the component after the API returns the post
+    },
+    canActivate: [PageTitleGuard]
   },
   {
     path: '**',
