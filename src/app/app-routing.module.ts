@@ -23,6 +23,14 @@ const routes: Routes = [
     canActivate: [PageTitleGuard]
   },
   {
+    path: 'edit/:id',
+    component: PostCreateComponent,
+    data: {
+      name: 'Editar Postagem'
+    },
+    canActivate: [PageTitleGuard]
+  },
+  {
     path: 'posts/:id',
     component: PostPageComponent,
     data: {

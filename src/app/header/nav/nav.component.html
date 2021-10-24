@@ -1,6 +1,7 @@
 <div class="nav-items">
     <a class="blog-button" routerLink="/posts">Postagens</a>
     <a class="blog-button" routerLink="/">Pg. Aleatória</a>
-    <a class="blog-button" routerLink="/new">Postar</a>
+    <a *ngIf="hasSecret" class="blog-button" routerLink="/new">Postar</a>
+    <a *ngIf="!hasSecret" class="blog-button" routerLink="/">Nada</a>
     <a class="blog-button" routerLink="/">Sobre</a>
 </div>

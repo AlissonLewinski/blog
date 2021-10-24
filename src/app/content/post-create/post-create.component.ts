@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Category } from 'src/app/models/category.model';
-import { CategoriesService } from 'src/app/services/categories.service';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Post } from '../../models/post.model';
 import { PostsService } from '../../services/posts.service';
 
@@ -13,12 +11,16 @@ import { PostsService } from '../../services/posts.service';
 export class PostCreateComponent implements OnInit {
 
   post: Post = {
+    id: 0,
     title: '',
     image: '',
     description: '',
     category_id: null,
-    content: ''
+    content: '',
+    is_private: false
   }
+
+  mode: 'create' | 'edit' = 'create'
 
   isCreatingCategory: boolean = false
 
@@ -27,7 +29,19 @@ export class PostCreateComponent implements OnInit {
   uploadedImage: any = null
   reader: FileReader = new FileReader()
 
-  constructor(private postsService: PostsService, private router: Router) {
+  constructor(private postsService: PostsService, private router: Router, private route: ActivatedRoute) {
+    
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      let id = params.get('id')
+
+      if (id) {
+        this.postsService.getById(parseInt(id)).subscribe((res: Post) => {
+          this.post = res
+          this.mode = 'edit'
+        })
+      }
+
+    })
 
   }
 
@@ -44,9 +58,7 @@ export class PostCreateComponent implements OnInit {
   }
 
   onSave() {
-    this.postSecret = prompt('Qual a senha? 🧐') || ''
-
-    this.postsService.create(this.post, this.postSecret).subscribe(() => {
+    this.postsService[this.mode](this.post).subscribe(() => {
       this.router.navigate(['/posts'])
     })
   }

@@ -5,3 +5,7 @@
 <p class="description">{{post.description}}</p>
 
 <span class="date">{{post.created_at | date: 'HH:mm - dd/MM/yyyy'}}</span>
+
+<span *ngIf="post.is_private" class="private-icon material-icons">
+    lock
+</span>

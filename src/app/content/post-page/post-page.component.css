@@ -1,3 +1,13 @@
+:host {
+    position: relative;
+}
+
+:host > button {
+    position: absolute;
+    top: -4.0rem;
+    right: 1rem;
+}
+
 .post-content {
     padding: 0 1rem;
     font-family: var(--font-title);

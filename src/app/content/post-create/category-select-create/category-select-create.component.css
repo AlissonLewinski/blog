@@ -12,3 +12,7 @@
 .new-name {
     flex-grow: 1;
 }
+
+button {
+    width: 2rem;
+}

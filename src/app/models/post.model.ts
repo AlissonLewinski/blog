@@ -5,6 +5,7 @@ export interface Post {
     description: string,
     category_id: number | null,
     content: string,
+    is_private: boolean,
     created_at?: Date
 }
 

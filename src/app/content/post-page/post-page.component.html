@@ -1,1 +1,9 @@
-<div class="post-content" [innerHTML]="post.content"></div>
+<div class="post-content" [innerHTML]="post.content | safeHtml"></div>
+
+<button 
+    *ngIf="!isLoading && hasSecret"
+    [routerLink]="'/edit/' + post.id"
+    class="blog-button material-icons"
+>
+    edit
+</button>

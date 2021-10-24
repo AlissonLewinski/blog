@@ -8,10 +8,16 @@
 </button>
 <input #imageInput (change)="handleImageInput($event)" type="file" accept="image/*" [hidden]="true">
 
+<button class="blog-button material-icons private" (click)="post.is_private = !post.is_private">
+    {{post.is_private ? 'lock' : 'lock_open'}}
+</button>
+
 <input [(ngModel)]="post.description" placeholder="Descrição" type="text" class="blog-input description">
 
 <app-category-select-create (categorySelectedEvent)="post.category_id = $event" [selectedId]="post.category_id"></app-category-select-create>
 
 <ckeditor [(ngModel)]="post.content" class="content"></ckeditor>
 
-<button (click)="onSave()" class="blog-button save">Salvar</button>
+<button (click)="onSave()" class="blog-button save">
+    {{mode === 'create' ? 'Salvar' : 'Editar'}}
+</button>

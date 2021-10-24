@@ -14,7 +14,8 @@ export class PostItemComponent implements OnInit {
     image: '',
     description: '',
     category_id: null,
-    content: ''
+    content: '',
+    is_private: false
   }
 
   constructor() { }

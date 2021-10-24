@@ -1,12 +1,12 @@
 :host {
     display: grid;
-    grid-template-columns: 1fr 30% 28%;
-    grid-template-rows: 2rem 2rem 1fr 2rem;
+    grid-template-columns: 1fr 30% 28% 2rem;
+    grid-template-rows: 2rem 2rem 37rem 2rem;
     grid-template-areas: 
-        'title       image       image'
-        'description description category'
-        'content     content     content'
-        'save        save        save';
+        'title       image       image    private'
+        'description description category category'
+        'content     content     content  content'
+        'save        save        save     save';
     gap: 1rem;
 }
 
@@ -19,6 +19,10 @@
     font-family: var(--font-title);
 }
 
+.private {
+    grid-area: private;
+}
+
 .description {
     grid-area: description;
 }
@@ -29,7 +33,9 @@ app-category-select-create {
 
 .content {
     grid-area: content;
-    border: solid var(--border-width) var(--color-main);
+    border: solid var(--border-width) var(--color-main);    
+
+    overflow: hidden;
 }
 
 .save {
