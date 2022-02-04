@@ -10,4 +10,27 @@
         'nav image';
 
     padding: 0 0 1rem 0;
+    position: relative;
+}
+
+app-title {
+    z-index: 1;
+}
+
+app-nav {
+    z-index: 1;
+}
+
+app-image {
+    z-index: 2;
+}
+
+@media(max-width: 850px) {
+    :host {
+        grid-template-columns: 1fr;
+    }
+
+    app-image {
+        display: none;
+    }
 }

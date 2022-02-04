@@ -18,7 +18,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    flex-wrap: wrap;
 }
+
+@media(max-width: 434px) {
+    .filters {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            'order' 'categories'
+            ''      'name-search';
+    }
+}
+
 
 .filters .order, .filters .categories {
     font-family: var(--font-title);
@@ -36,6 +49,12 @@
     grid-template-rows: repeat(auto-fill, var(--post-item-height));
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+}
+
+@media(max-width: 605px) {
+    .posts {
+        grid-template-columns: 1fr;
+    }
 }
 
 .paginator {
